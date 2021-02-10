@@ -38,8 +38,8 @@ def game():
     b=randomchoice(a)
     printgame(a,b)
     
-    choice=input("\nWho has more followers 'A' or 'B'?: ")
-    if choice=='A':
+    choice=input("\nWho has more followers 'A' or 'B'?: ").lower()
+    if choice=='A' or choice=='a':
       choice=a
     else:
       choice=b
