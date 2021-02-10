@@ -22,18 +22,20 @@ def printgame(n, m):
   print(art.vs)
   print(f"Against B: {m['name']}, {m['description']}, {m['country']}")
 
-def randomchoice():
-  n=random.choice(data)
-  return n
+def randomchoice(n):
+  m=random.choice(data)
+  if n==m:
+    randomchoice(n)
+  return m
 
 def game():
   flag=True
   right=0
-  a=randomchoice()
+  a=random.choice(data)
   while flag==True:
     print(art.logo)
     print(f"{right} passed")
-    b=randomchoice()
+    b=randomchoice(a)
     printgame(a,b)
     
     choice=input("\nWho has more followers 'A' or 'B'?: ")
